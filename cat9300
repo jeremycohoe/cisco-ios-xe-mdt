@@ -1,0 +1,54 @@
+# Model-Driven Telemetry Telemetry Example for JCOHOE-LAB
+# C9300 IOS XE 16.12 @ 10.85.134.65
+# Ubuntu 10.85.134.66 Telegraf gRPC Server Port: 57500
+
+telemetry ietf subscription 100
+ encoding encode-kvgpb
+ filter xpath /environment-ios-xe-oper:environment-sensors
+ source-address 10.85.134.65
+ stream yang-push
+ update-policy periodic 2000
+ receiver ip address 10.85.134.66 57500 protocol grpc-tcp
+
+telemetry ietf subscription 102
+ encoding encode-kvgpb
+ filter xpath /interfaces-ios-xe-oper:interfaces/interface
+ source-address 10.85.134.65
+ stream yang-push
+ update-policy periodic 2000
+ receiver ip address 10.85.134.66 57500 protocol grpc-tcp
+
+telemetry ietf subscription 103
+ encoding encode-kvgpb
+ filter xpath /oc-if:interfaces/interface
+ source-address 10.85.134.65
+ stream yang-push
+ update-policy periodic 2000
+ receiver ip address 10.85.134.66 57500 protocol grpc-tcp
+
+telemetry ietf subscription 104
+ encoding encode-kvgpb
+ filter xpath /process-cpu-ios-xe-oper:cpu-usage/cpu-utilization
+ source-address 10.85.134.65
+ stream yang-push
+ update-policy periodic 2000
+ receiver ip address 10.85.134.66 57500 protocol grpc-tcp
+
+no telemetry ietf subscription 105
+telemetry ietf subscription 105
+ encoding encode-kvgpb
+ filter xpath /memory-ios-xe-oper:memory-statistics/memory-statistic
+ source-address 10.85.134.65
+ stream yang-push
+ update-policy periodic 2000
+ receiver ip address 10.85.134.66 57500 protocol grpc-tcp
+
+no telemetry ietf subscription 106
+telemetry ietf subscription 106
+ encoding encode-kvgpb
+ filter xpath /process-memory-ios-xe-oper:memory-usage-processes/memory-usage-process
+ source-address 10.85.134.65
+ stream yang-push 
+ update-policy periodic 2000
+ receiver ip address 10.85.134.66 57500 protocol grpc-tcp
+
