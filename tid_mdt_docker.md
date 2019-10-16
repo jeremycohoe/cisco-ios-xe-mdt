@@ -1,20 +1,35 @@
 # TIG_MDT Docker Container
 
-## Docker container on DockerHub
+### Docker container on DockerHub
 The pre-packaged docker container is available from DockerHub at 
 [https://hub.docker.com/r/jeremycohoe/tig_mdt
 ](https://hub.docker.com/r/jeremycohoe/tig_mdt)
 
-## Downloading and Running
+### Downloading and Running
 First download or pull the docker image from dockerhub. Then start the docker container and call the /start.sh script that automatically starts Telegraf, InfluxDB, and Grafana.
 
 $ docker pull jeremycohoe/tig_mdt
 
 $ docker run -dit -p 3000:3000 -p 57500:57500 tig_mdt /start.sh
 
+### Configure MDT on Cisco IOS XE device
+Ensure the Cisco IOS XE device is running 16.10 or later and has the following configuration enabled:
 
-## Components
-# Telegraf
+netconf-yang
+
+####Configuration Example
+```
+telemetry ietf subscription 102
+ encoding encode-kvgpb
+ filter xpath /interfaces-ios-xe-oper:interfaces/interface
+ source-address 10.85.134.65
+ stream yang-push
+ update-policy periodic 2000
+ receiver ip address 10.85.134.66 57500 protocol grpc-tcp
+```
+
+## Container Components
+### Telegraf
 Telegraf has been configured with the cisco_telemetry_mdt plugin to listen for gRPC telemetry on port 57500
 
 Details about the "cisco\_telemetry\_mdt"  can be found at the [Telegraf Inputs Plugin github page](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/cisco_telemetry_mdt).
@@ -42,7 +57,7 @@ It will sent it to the local InfluxDB database "cisco_mdt"
   files = ["/root/telegraf/telegraf.log"]
 ```
 
-# Influx
+### InfluxDB
 The "cisco_mdt" database has been created within Influx
 
 To check if data is present, run these commands:
@@ -75,10 +90,7 @@ openconfig-interfaces:interfaces/interface
 ```
 
 
-# Grafana
+### Grafana
 
 Grafana has been configured to connect to the local InfluxDB's database "cisco_mdt" and can be access with the **admin** username with password **Cisco123**. Grafana can be accessed on the default HTTP port 3000
-
-
-
 
