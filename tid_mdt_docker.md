@@ -10,7 +10,7 @@ First download or pull the docker image from dockerhub. Then start the docker co
 
 $ docker pull jeremycohoe/tig_mdt
 
-$ docker run -dit -p 3000:3000 -p 57500:57500 tig_mdt /start.sh
+$ docker run -dit -p 3000:3000 -p 57500:57500 jeremycohoe/tig_mdt /start.sh
 
 ### Configure MDT on Cisco IOS XE device
 Ensure the Cisco IOS XE device is running 16.10 or later and has the following configuration enabled:
