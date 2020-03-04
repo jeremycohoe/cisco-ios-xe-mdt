@@ -1,0 +1,147 @@
+telemetry ietf subscription 200
+ encoding encode-kvgpb
+ filter xpath /ios-events-ios-xe-oper:bgp-peer-state-change
+ stream yang-notif-native
+ update-policy on-change
+ receiver ip address 10.85.134.110 57500 protocol grpc-tcp
+ source-address 10.85.134.65
+telemetry ietf subscription 201
+ encoding encode-kvgpb
+ filter xpath /ios-events-ios-xe-oper:ospf-neighbor-state-change
+ stream yang-notif-native
+ update-policy on-change
+ receiver ip address 10.85.134.110 57500 protocol grpc-tcp
+ source-address 10.85.134.65
+telemetry ietf subscription 202
+ encoding encode-kvgpb
+ filter xpath /ios-events-ios-xe-oper:ospf-interface-state-change
+ stream yang-notif-native
+ update-policy on-change
+ receiver ip address 10.85.134.110 57500 protocol grpc-tcp
+ source-address 10.85.134.65
+telemetry ietf subscription 203
+ encoding encode-kvgpb
+ filter xpath /ios-events-ios-xe-oper:interface-state-change
+ stream yang-notif-native
+ update-policy on-change
+ receiver ip address 10.85.134.110 57500 protocol grpc-tcp
+ source-address 10.85.134.65
+telemetry ietf subscription 204
+ encoding encode-kvgpb
+ filter xpath /ios-events-ios-xe-oper:memory-usage
+ stream yang-notif-native
+ update-policy on-change
+ receiver ip address 10.85.134.110 57500 protocol grpc-tcp
+ source-address 10.85.134.65
+telemetry ietf subscription 205
+ encoding encode-kvgpb
+ filter xpath /ios-events-ios-xe-oper:cpu-usage
+ stream yang-notif-native
+ update-policy on-change
+ receiver ip address 10.85.134.110 57500 protocol grpc-tcp
+ source-address 10.85.134.65
+telemetry ietf subscription 206
+ encoding encode-kvgpb
+ filter xpath /ios-events-ios-xe-oper:interface-admin-state-change
+ stream yang-notif-native
+ update-policy on-change
+ receiver ip address 10.85.134.110 57500 protocol grpc-tcp
+ source-address 10.85.134.65
+telemetry ietf subscription 207
+ encoding encode-kvgpb
+ filter xpath /ios-events-ios-xe-oper:sdcard-fault
+ stream yang-notif-native
+ update-policy on-change
+ receiver ip address 10.85.134.110 57500 protocol grpc-tcp
+ source-address 10.85.134.65
+telemetry ietf subscription 208
+ encoding encode-kvgpb
+ filter xpath /ios-events-ios-xe-oper:system-reboot-complete
+ stream yang-notif-native
+ update-policy on-change
+ receiver ip address 10.85.134.110 57500 protocol grpc-tcp
+ source-address 10.85.134.65
+telemetry ietf subscription 209
+ encoding encode-kvgpb
+ filter xpath /ios-events-ios-xe-oper:system-reboot-issued
+ stream yang-notif-native
+ update-policy on-change
+ receiver ip address 10.85.134.110 57500 protocol grpc-tcp
+ source-address 10.85.134.65
+telemetry ietf subscription 210
+ encoding encode-kvgpb
+ filter xpath /ios-events-ios-xe-oper:flash-fault
+ stream yang-notif-native
+ update-policy on-change
+ receiver ip address 10.85.134.110 57500 protocol grpc-tcp
+ source-address 10.85.134.65
+telemetry ietf subscription 211
+ encoding encode-kvgpb
+ filter xpath /ios-events-ios-xe-oper:system-login-change
+ stream yang-notif-native
+ update-policy on-change
+ receiver ip address 10.85.134.110 57500 protocol grpc-tcp
+ source-address 10.85.134.65
+telemetry ietf subscription 212
+ encoding encode-kvgpb
+ filter xpath /ios-events-ios-xe-oper:system-logout-change
+ stream yang-notif-native
+ update-policy on-change
+ receiver ip address 10.85.134.110 57500 protocol grpc-tcp
+ source-address 10.85.134.65
+telemetry ietf subscription 213
+ encoding encode-kvgpb
+ filter xpath /ios-events-ios-xe-oper:tempsensor-fault
+ stream yang-notif-native
+ update-policy on-change
+ receiver ip address 10.85.134.110 57500 protocol grpc-tcp
+ source-address 10.85.134.65
+telemetry ietf subscription 214
+ encoding encode-kvgpb
+ filter xpath /ios-events-ios-xe-oper:disk-usage
+ stream yang-notif-native
+ update-policy on-change
+ receiver ip address 10.85.134.110 57500 protocol grpc-tcp
+ source-address 10.85.134.65
+telemetry ietf subscription 215
+ encoding encode-kvgpb
+ filter xpath /ios-events-ios-xe-oper:usb-state-change
+ stream yang-notif-native
+ update-policy on-change
+ receiver ip address 10.85.134.110 57500 protocol grpc-tcp
+ source-address 10.85.134.65
+telemetry ietf subscription 216
+ encoding encode-kvgpb
+ filter xpath /ios-events-ios-xe-oper:sfp-state-change
+ stream yang-notif-native
+ update-policy on-change
+ receiver ip address 10.85.134.110 57500 protocol grpc-tcp
+ source-address 10.85.134.65
+telemetry ietf subscription 217
+ encoding encode-kvgpb
+ filter xpath /ios-events-ios-xe-oper:sfp-support-state
+ stream yang-notif-native
+ update-policy on-change
+ receiver ip address 10.85.134.110 57500 protocol grpc-tcp
+ source-address 10.85.134.65
+telemetry ietf subscription 218
+ encoding encode-kvgpb
+ filter xpath /ios-events-ios-xe-oper:fantray-fault
+ stream yang-notif-native
+ update-policy on-change
+ receiver ip address 10.85.134.110 57500 protocol grpc-tcp
+ source-address 10.85.134.65
+telemetry ietf subscription 219
+ encoding encode-kvgpb
+ filter xpath /ios-events-ios-xe-oper:fan-fault
+ stream yang-notif-native
+ update-policy on-change
+ receiver ip address 10.85.134.110 57500 protocol grpc-tcp
+ source-address 10.85.134.65
+telemetry ietf subscription 220
+ encoding encode-kvgpb
+ filter xpath /ios-events-ios-xe-oper:tempsensor-state
+ stream yang-notif-native
+ update-policy on-change
+ receiver ip address 10.85.134.110 57500 protocol grpc-tcp
+ source-address 10.85.134.65
