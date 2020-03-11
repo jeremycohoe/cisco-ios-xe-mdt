@@ -1,3 +1,28 @@
+##################################
+# Example on-change notification #
+##################################
+no telemetry ietf subscription 101
+telemetry ietf subscription 101
+ encoding encode-kvgpb
+ filter xpath /ios-events-ios-xe-oper:ospf-neighbor-state-change
+ source-address 11.13.2.76
+ source-vrf Mgmt-vrf
+ stream yang-notif-native
+ update-policy on-change
+ receiver ip address 11.20.9.32 57600 protocol grpc-tcp
+
+##################################
+# Example notification:          #
+##################################
+Cisco-IOS-XE-ios-events-oper:ospf-neighbor-state-change,host=jcohoe-ubuntu,source=Nyquist-9300,subscription=102 if_addr="66.222.222.14",ospf_new_state="ospf-nbr-down",severity_level="major",host_name="Nyquist-9300",system_ip="0.0.0.0",vrf_name="0",neighbor="66.222.222.13",router_id="67.7.7.7" 1569350366344000000
+Cisco-IOS-XE-ios-events-oper:ospf-neighbor-state-change,host=jcohoe-ubuntu,source=Nyquist-9300,subscription=102 router_id="67.7.7.7",if_addr="66.222.222.14",ospf_new_state="ospf-nbr-full",severity_level="major",host_name="Nyquist-9300",system_ip="0.0.0.0",vrf_name="0",neighbor="66.222.222.13" 1569350388582000000
+Cisco-IOS-XE-ios-events-oper:ospf-neighbor-state-change,host=jcohoe-ubuntu,source=Nyquist-9300,subscription=102 neighbor="66.222.222.13",router_id="67.7.7.7",if_addr="66.222.222.14",ospf_new_state="ospf-nbr-exstart",severity_level="major",host_name="Nyquist-9300",system_ip="13.222.222.66",vrf_name="0" 1569350388580000000
+
+
+############################
+# Baseline configuration ? #
+############################
+
 telemetry ietf subscription 200
  encoding encode-kvgpb
  filter xpath /ios-events-ios-xe-oper:bgp-peer-state-change
