@@ -1,0 +1,40 @@
+WLC-SOLUTION#show vrf
+Name Default RD Protocols Interfaces
+mgmt <not set> ipv4 Gi1
+
+WLC-SOLUTION#sh ip int brief
+Interface IP-Address OK? Method Status Protocol
+GigabitEthernet1 10.100.99.14 YES manual up up
+GigabitEthernet2 unassigned YES unset up up
+GigabitEthernet3 unassigned YES unset up up
+Vlan1 unassigned YES unset administratively down down
+Vlan2101 10.100.1.14 YES manual up up
+
+WLC-SOLUTION#show run | sec tel
+
+telemetry ietf subscription 502
+encoding encode-kvgpb
+filter xpath /process-cpu-ios-xe-oper:cpu-usage/cpu-utilization/five-seconds
+source-address 10.100.99.14
+source-vrf mgmt
+stream yang-push
+update-policy periodic 2000
+receiver ip address 10.100.1.13 57500 protocol grpc-tcp
+
+telemetry ietf subscription 503
+encoding encode-kvgpb
+filter xpath /memory-ios-xe-oper:memory-statistics/memory-statistic
+source-address 10.100.99.14
+source-vrf mgmt
+stream yang-push
+update-policy periodic 2000
+receiver ip address 10.100.1.13 57500 protocol grpc-tcp
+
+telemetry ietf subscription 504
+encoding encode-kvgpb
+filter xpath /interfaces-ios-xe-oper:interfaces/interface[name="GigabitEthernet1"]/statistics
+source-address 10.100.99.14
+source-vrf mgmt
+stream yang-push
+update-policy periodic 2000
+receiver ip address 10.100.1.13 57500 protocol grpc-tcp
