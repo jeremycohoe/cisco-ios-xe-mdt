@@ -12,6 +12,20 @@ telemetry ietf subscription 101
  receiver ip address 11.20.9.32 57600 protocol grpc-tcp
 
 ##################################
+# Example on-change notification #
+# IOS XE configuration changes   #
+##################################
+telemetry ietf subscription 102
+ encoding encode-kvgpb
+ filter xpath /ios:native
+ stream yang-push
+ update-policy on-change
+ receiver ip address 10.1.1.3 57500 protocol grpc-tcp
+
+
+
+
+##################################
 # Example notification:          #
 ##################################
 Cisco-IOS-XE-ios-events-oper:ospf-neighbor-state-change,host=jcohoe-ubuntu,source=Nyquist-9300,subscription=102 if_addr="66.222.222.14",ospf_new_state="ospf-nbr-down",severity_level="major",host_name="Nyquist-9300",system_ip="0.0.0.0",vrf_name="0",neighbor="66.222.222.13",router_id="67.7.7.7" 1569350366344000000
