@@ -3,7 +3,7 @@
 # Ubuntu 10.85.134.66 Telegraf gRPC Server Port: 57500
 
 ##################################
-# Example on-change notification #
+# Example periodic notification  #
 ##################################
 telemetry ietf subscription 100
  encoding encode-kvgpb
