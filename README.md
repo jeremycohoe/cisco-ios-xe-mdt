@@ -1,11 +1,22 @@
 ## [IOS XE Programmability Lab](https://github.com/jeremycohoe/cisco-ios-xe-programmability-lab)
 
 
-## Module: Model Driven Telemetry
+# Module: Model Driven Telemetry
 
-## Topics Covered:
-Model-Driven Telemetry
+# Docker container: tig_mdt
 
+The tig_mdt docker container from Dockerhub at [https://hub.docker.com/r/jeremycohoe/tig_mdt](https://hub.docker.com/r/jeremycohoe/tig_mdt) is available which has been pre-configured for the Model Driven Telemetry usecases described in this section
+
+Start the container with the following Docker commands:
+
+```
+docker pull jeremycohoe/tig_mdt
+
+docker run -ti -p 3000:3000 -p 57500:57500 jeremycohoe/tig_mdt
+
+```
+
+Port **3000** is the Grafana HTTP interface and port **57500 and 57501** have been configured for the gRPC Dial-Out + TLS use cases.
 
 # Model-Driven Telemetry
 
