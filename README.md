@@ -45,58 +45,15 @@ In this lab we cover the **gRPC Dial-out** telemetry that was released in IOS XE
 
 Every LAB POD includes a full installation of all the above-mentioned software.
 
-## Verify clock synchronization (optional - only required if troubleshooting)
+### Step 1 - Setup our TIG stack
 
-When collecting data from any source, a key requirement is a precise and reliable time reference. If the data source and the collector clocks are not aligned, the data becomes inaccurate and can lead to misleading interpretations of a system state.
+First thing we need to do is configure our TIG stack on our local machine. Thankfully, Jeremy Cohoe has created a fantastic docker container with all the needed components preinstalled. You can pull the container from the Docker hub with the following shell command.
 
-This lab relies on NTP (Network Time Protocol) to keep all the devices in sync with the Ubuntu Linux Server acting as NTP master. Ensure the NTP configuration is correct on the C9300 with the show clock command
+```docker pull jeremycohoe/tig_mdt```
 
-From the Windows Jump Host desktop, connect to each of the IOS XE devices and check that the current time is correct and that the NTP server is configured.
+Let that pull down the required image from Docker hub then run the following command to start the container. 
 
-
-### Ensure that the time is correct on the IOS XE devices
-```
-c9300# show clock
-...
-c9300# sh run | include ntp
-ntp server 10.1.1.3
-
-
-csr1000# show clock
-...
-csr1000# sh run | include ntp
-ntp server 10.1.1.3
-
-
-C9800# show clock
-...
-C9800# sh run | include ntp
-ntp server 10.1.1.3
-```
-
-### Ensure time is in-sync on Ubuntu
-Open a SSH connection to the Ubuntu and check NTP status and verify NTP is syncronized
-
-```
-auto@automation:~$ date
-
-Wed Oct 9 09:02:12 PDT 2029
-
-If required, manually set the time:
-
-$ sudo date +%Y%m%d -s "19990612"
-
-$ sudo date +%T -s  "09:00:00"
-```
-
-### Ensure time is correct in Windows
-Finally on the Windows Jump Host confirm the time is correct. In order to sync the time if it is not correct, right click on the time, select  "Adjust date\time", select the  "Internet Time" tab and then  "Change settings" then  "Update now"
-
-You may need to click  "Update now" several times before the Windows host is able to successful synchronize with the NTP time source.
-
-The time is in now sync across all hosts.
-
-![](imgs/2-ntp-on-windows.png)
+```docker run -ti -p 3000:3000 -p 57500:57500 jeremycohoe/tig_mdt```
 
 ## NETCONF Dial-In Model Driven Telemetry
 
