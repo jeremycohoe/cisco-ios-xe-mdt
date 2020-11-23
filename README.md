@@ -6,22 +6,6 @@
 ## Topics Covered:
 Model-Driven Telemetry
 
-Verify clock synchronization
-
-NETCONF Dial-In Dynamic Subscriptions
-
-gNMI Dial-In Dynamic Subscriptions
-
-gRPC Dial-Out Configured Subscriptions
-
-Explore Telegraf
-
-Exploring InfluxdDB
-
-Exploring Grafana Dashboards
-
-Conclusion
-
 
 # Model-Driven Telemetry
 
