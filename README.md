@@ -18,6 +18,12 @@ docker run -ti -p 3000:3000 -p 57500:57500 jeremycohoe/tig_mdt
 
 Port **3000** is the Grafana HTTP interface and port **57500 and 57501** have been configured for the gRPC Dial-Out + TLS use cases.
 
+
+# Grafana Dashboards
+
+There is an example Grafana dashboard available at  [https://grafana.com/grafana/dashboards/13462](https://grafana.com/grafana/dashboards/13462) which can be imported into an existing Grafana deployment. Following the details and instructions on the Grafana.com site as needed to replicate this setup.
+
+
 # Model-Driven Telemetry
 
 Network data collection for today s high-density platforms and scale is becoming a tedious task for monitoring and troubleshooting. There is a need for operational data from different devices in the network to be collected in a centralized location, so that cross-functional groups can collaboratively work to analyze and fix an issue.
