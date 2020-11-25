@@ -23,6 +23,10 @@ Port **3000** is the Grafana HTTP interface and port **57500 and 57501** have be
 
 There is an example Grafana dashboard available at  [https://grafana.com/grafana/dashboards/13462](https://grafana.com/grafana/dashboards/13462) which can be imported into an existing Grafana deployment. Following the details and instructions on the Grafana.com site as needed to replicate this setup.
 
+The example dashboard looks similar to the below:
+
+![](imgs/grafana-dashboard-13462.png)
+
 
 # Model-Driven Telemetry
 
