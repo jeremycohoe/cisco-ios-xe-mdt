@@ -1,0 +1,54 @@
+{% if cli -%}
+{% for sub in subs -%}
+no telemetry ietf subscription {{sub.seq_num}}
+telemetry ietf subscription {{sub.seq_num}}
+ encoding encode-kvgpb
+ filter xpath {{sub.sub}}
+ {% if source_ip -%}
+ source-address {{source_ip}}
+ {% endif -%}
+ {% if source_vrf -%}
+ source-vrf {{source_vrf}}
+ {% endif -%}
+ {% if 'periodic' in sub.sub_type -%}
+ stream yang-push
+ update-policy periodic {{seconds}}
+ {% else -%}
+ stream yang-notif-native
+ update-policy on-change
+ {% endif -%}
+ receiver ip address {{ip}} 57500 protocol grpc-tcp
+{% endfor -%}
+{% else -%}
+<config>
+  <mdt-config-data xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-mdt-cfg">
+    {% for sub in subs -%}
+    <mdt-subscription>
+      <subscription-id>{{sub.seq_num}}</subscription-id>
+      <base>
+        {% if 'periodic' in sub.sub_type -%}
+        <stream>yang-push</stream>
+        <period>{{seconds}}</period>
+        {% else -%}
+        <stream>yang-notif-native</stream>
+        <period>0</period>
+        {% endif -%}
+        <encoding>encode-kvgpb</encoding>
+        {% if source_ip -%}
+        <source-address>{{source_ip}}</source-address>
+        {% endif -%}
+        {% if source_vrf -%}
+        <source-vrf>{{source_vrf}}</source-vrf>
+        {% endif -%}
+        <xpath>{{sub.sub}}</xpath>
+      </base>
+      <mdt-receivers>
+        <address>{{ip}}</address>
+        <port>57500</port>
+        <protocol>grpc-tcp</protocol>
+      </mdt-receivers>
+    </mdt-subscription>
+  {% endfor -%}
+  </mdt-config-data>
+</config>
+{% endif -%}

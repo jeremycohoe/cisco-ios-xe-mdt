@@ -1,0 +1,63 @@
+wlc:
+  17.2:
+    periodic:
+      - /wireless-client-oper:client-oper-data/traffic-stats
+      - /wireless-client-oper:client-oper-data/dc-info
+      - /wireless-client-oper:client-oper-data/client-wsa-info
+      - /wireless-access-point-oper:access-point-oper-data/radio-oper-stats
+      - /wireless-access-point-oper:access-point-oper-data/ap-name-mac-map
+      - /wireless-access-point-oper:access-point-oper-data/capwap-data
+      - /wireless-access-point-oper:access-point-oper-data/radio-oper-data
+      - /wireless-access-point-oper:access-point-oper-data/ssid-counters
+      - /wireless-client-oper:client-oper-data/common-oper-data
+      - /wireless-rrm-oper:rrm-oper-data/rrm-measurement
+      - /wireless-mobility-oper:mobility-oper-data/mobility-node-data
+      - /wireless-mobility-oper:mobility-oper-data/wlan-client-limit
+      - /wireless-access-point-oper:access-point-oper-data
+      - /wireless-client-oper:client-oper-data
+      - /wireless-location-oper:location-oper-data
+      - /environment-ios-xe-oper:environment-sensors
+      - /process-cpu-ios-xe-oper:cpu-usage/cpu-utilization
+      - /memory-ios-xe-oper:memory-statistics/memory-statistic
+    on-change:
+
+
+switch:
+  17.1:
+    periodic:
+      - /environment-ios-xe-oper:environment-sensors
+      - /interfaces-ios-xe-oper:interfaces/interface
+      - /oc-if:interfaces/interface
+      - /process-cpu-ios-xe-oper:cpu-usage/cpu-utilization
+      - /memory-ios-xe-oper:memory-statistics/memory-statistic
+      - /process-memory-ios-xe-oper:memory-usage-processes/memory-usage-process
+
+    on-change:
+      - /ios-events-ios-xe-oper:ospf-neighbor-state-change
+      - /ios-events-ios-xe-oper:bgp-peer-state-change
+      - /ios-events-ios-xe-oper:ospf-neighbor-state-change
+      - /ios-events-ios-xe-oper:ospf-interface-state-change
+      - /ios-events-ios-xe-oper:interface-state-change
+      - /ios-events-ios-xe-oper:memory-usage
+      - /ios-events-ios-xe-oper:cpu-usage
+      - /ios-events-ios-xe-oper:interface-admin-state-change
+      - /ios-events-ios-xe-oper:sdcard-fault
+      - /ios-events-ios-xe-oper:system-reboot-complete
+      - /ios-events-ios-xe-oper:system-reboot-issued
+      - /ios-events-ios-xe-oper:flash-fault
+      - /ios-events-ios-xe-oper:system-login-change
+      - /ios-events-ios-xe-oper:system-logout-change
+      - /ios-events-ios-xe-oper:tempsensor-fault
+      - /ios-events-ios-xe-oper:disk-usage
+      - /ios-events-ios-xe-oper:usb-state-change
+      - /ios-events-ios-xe-oper:sfp-state-change
+      - /ios-events-ios-xe-oper:sfp-support-state
+      - /ios-events-ios-xe-oper:fantray-fault
+      - /ios-events-ios-xe-oper:fan-fault
+      - /ios-events-ios-xe-oper:tempsensor-state
+  17.2:
+    periodic:
+      - /process-memory-ios-xe-oper:memory-usage-processes/memory-usage-process
+
+    on-change:
+      - /ios-events-ios-xe-oper:ospf-neighbor-state-change
