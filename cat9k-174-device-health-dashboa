@@ -1,0 +1,154 @@
+For use with https://grafana.com/grafana/dashboards/13462
+
+# Remove previous config
+no telemetry ietf subscription 3301
+no telemetry ietf subscription 3302
+no telemetry ietf subscription 3303
+no telemetry ietf subscription 3304
+no telemetry ietf subscription 3305
+no telemetry ietf subscription 3306
+no telemetry ietf subscription 3307
+no telemetry ietf subscription 3308
+no telemetry ietf subscription 3309
+no telemetry ietf subscription 3310
+no telemetry ietf subscription 3311
+no telemetry ietf subscription 3312
+no telemetry ietf subscription 3313
+no telemetry ietf subscription 3314
+no telemetry ietf subscription 3315
+
+
+# Temperature
+telemetry ietf subscription 3301
+ encoding encode-kvgpb
+ filter xpath /oc-platform:components/component/state/temperature
+ source-address 172.16.1.193
+ stream yang-push
+ update-policy periodic 3000
+ receiver ip address 172.16.1.248 57500 protocol grpc-tcp
+
+# Fan
+telemetry ietf subscription 3302
+ encoding encode-kvgpb
+ filter xpath /oc-platform:components/component/fan/state
+ source-address 172.16.1.193
+ stream yang-push
+ update-policy periodic 3000
+ receiver ip address 172.16.1.248 57500 protocol grpc-tcp
+
+# System Last Boot
+telemetry ietf subscription 3303
+ encoding encode-kvgpb
+ filter xpath /oc-sys:system/state
+ source-address 172.16.1.193
+ stream yang-push
+ update-policy periodic 3000
+ receiver ip address 172.16.1.248 57500 protocol grpc-tcp
+
+# Power Supply
+telemetry ietf subscription 3304
+ encoding encode-kvgpb
+ filter xpath /oc-platform:components/component/power-supply/state
+ source-address 172.16.1.193
+ stream yang-push
+ update-policy periodic 3000
+ receiver ip address 172.16.1.248 57500 protocol grpc-tcp
+
+# CPU
+telemetry ietf subscription 3305
+ encoding encode-kvgpb
+ filter xpath /process-cpu-ios-xe-oper:cpu-usage/cpu-utilization
+ source-address 172.16.1.193
+ stream yang-push
+ update-policy periodic 3000
+ receiver ip address 172.16.1.248 57500 protocol grpc-tcp
+
+# MAC 
+telemetry ietf subscription 3306
+ encoding encode-kvgpb
+ filter xpath /matm-ios-xe-oper:matm-oper-data
+ source-address 172.16.1.193
+ stream yang-push
+ update-policy periodic 3000
+ receiver ip address 172.16.1.248 57500 protocol grpc-tcp
+
+# Memory 
+telemetry ietf subscription 3307
+ encoding encode-kvgpb
+ filter xpath /memory-ios-xe-oper:memory-statistics/memory-statistic
+ source-address 172.16.1.193
+ stream yang-push
+ update-policy periodic 3000
+ receiver ip address 172.16.1.248 57500 protocol grpc-tcp
+
+# POE
+telemetry ietf subscription 3308
+ encoding encode-kvgpb
+ filter xpath /poe-ios-xe-oper:poe-oper-data/poe-switch
+ source-address 172.16.1.193
+ stream yang-push
+ update-policy periodic 3000
+ receiver ip address 172.16.1.248 57500 protocol grpc-tcp
+
+# Config
+telemetry ietf subscription 3309
+ encoding encode-kvgpb
+ filter xpath /ios:native
+ source-address 172.16.1.193
+ stream yang-push
+ update-policy periodic 3000
+ receiver ip address 172.16.1.248 57500 protocol grpc-tcp
+
+# MDT
+telemetry ietf subscription 3310
+ encoding encode-kvgpb
+ filter xpath /mdt-oper:mdt-oper-data/mdt-subscriptions
+ source-address 172.16.1.193
+ stream yang-push
+ update-policy periodic 3000
+ receiver ip address 172.16.1.248 57500 protocol grpc-tcp
+
+# CDP
+telemetry ietf subscription 3311
+ encoding encode-kvgpb
+ filter xpath /cdp-ios-xe-oper:cdp-neighbor-details
+ source-address 172.16.1.193
+ stream yang-push
+ update-policy periodic 3000
+ receiver ip address 172.16.1.248 57500 protocol grpc-tcp
+
+# ARP
+telemetry ietf subscription 3312
+ encoding encode-kvgpb
+ filter xpath /arp-ios-xe-oper:arp-data
+ source-address 172.16.1.193
+ stream yang-push
+ update-policy periodic 3000
+ receiver ip address 172.16.1.248 57500 protocol grpc-tcp
+
+# OpenConfig Interfaces
+telemetry ietf subscription 3313
+ encoding encode-kvgpb
+ filter xpath /oc-if:interfaces/interface/state/counters
+ source-address 172.16.1.193
+ stream yang-push
+ update-policy periodic 3000
+ receiver ip address 172.16.1.248 57500 protocol grpc-tcp
+
+# Native Interfaces
+telemetry ietf subscription 3314
+ encoding encode-kvgpb
+ filter xpath /interfaces-ios-xe-oper:interfaces/interface
+ source-address 172.16.1.193
+ stream yang-push
+ update-policy periodic 3000
+ receiver ip address 172.16.1.248 57500 protocol grpc-tcp
+
+ # IETF Interfaces
+telemetry ietf subscription 3315
+ encoding encode-kvgpb
+ filter xpath /if:interfaces-state
+ source-address 172.16.1.193
+ stream yang-push
+ update-policy periodic 3000
+ receiver ip address 172.16.1.248 57500 protocol grpc-tcp
