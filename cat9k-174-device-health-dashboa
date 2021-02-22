@@ -84,7 +84,7 @@ telemetry ietf subscription 3307
 # POE
 telemetry ietf subscription 3308
  encoding encode-kvgpb
- filter xpath /poe-ios-xe-oper:poe-oper-data/poe-switch
+ filter xpath /poe-ios-xe-oper:poe-oper-data
  source-address 172.16.1.193
  stream yang-push
  update-policy periodic 3000
