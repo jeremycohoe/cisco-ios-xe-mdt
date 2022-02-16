@@ -161,18 +161,82 @@ This concludes NETCONF Dial-In telemetry with CLI tooling - it will be explored 
 
 To enable the gNMI Dial-In Model Driven Telemetry interface use the following CLI's. Refer to the **gNMI** module for more details.
 
+Version <17.3
+
 ```
 gnmi-yang
 gnmi-yang server
 ```
 
-NOTE: This enables gNMI only in insecure mode. The CLI **gnmi-yang secure-server** enables the gNMI server in secure mode and requires TLS certificates to be loaded into IOS XE first. Refer to the **gNMI Module** for details on this configuration. The gNMI insecure server may used in the following examples.
+Version 17.3+
+```
+gnxi
+gnxi server
+```
+
+
+NOTE: This enables gNMI only in insecure mode. The CLI **gnmi-yang secure-server (<v17.3) or gnxi secure-server (v17.3+)** enables the gNMI server in secure mode and requires TLS certificates to be loaded into IOS XE first. Refer to the **gNMI Module** for details on this configuration. The gNMI insecure server may used in the following examples.
 
 Use the **gnmi_cli** tool to create a subscription with the following flags. Refer to the **gNMI Module** for details on certificate creation using the gen_certs.sh script if needed.
 
 ```
 gnmi_cli -address 10.1.1.5:9339 -server_name c9300 -with_user_pass -timeout 5s -ca_crt rootCA.pem -client_crt client.crt -client_key client.key -proto "$(cat ~/gnmi_proto/sub_vlan1.txt)" -dt p
 ```
+
+### Example: Subscribe to Access Point Oper Data
+
+With wireless, receive telemetry data from Access Points (APs) using YANG Suite and a device running IOS XE 17.7:
+
+In this example, we collect the radio-oper-data and the phy-ht-cfg:
+![](./imgs/gnmi_yang_suite.png)
+
+1. Within YANG Suite, navigate to Protocols > gNMI.
+1. Select the YANG Set for the wireless device
+1. Select the "Cisco-IOS-XE-wireless-access-point-oper" Module
+1. Click the blue "Load Module(s)" button
+1. Select the device
+1. For the gNMI Operation, select "Subscribe"
+1. Click the checkbox next to "Prefixing"
+1. Select "STREAM"
+1. Select "SAMPLE"
+1. Choose a sample interval
+1. Select RFC 7951
+1. Once loaded, expand the tree to select the specific features to receive telemetry on the APs
+1. Click the blue "Build JSON" button
+1. Click the blue "Run PRC(s)" button
+1. In a new window, the subscription data will appear
+![](./imgs/gnmi_subscription_data.png)
+
+gNMI Subscription:
+```
+gNMI SUBSCRIBE
+==============
+subscribe {
+  prefix {
+    origin: "rfc7951"
+  }
+  subscription {
+    path {
+      elem {
+        name: "Cisco-IOS-XE-wireless-access-point-oper:access-point-oper-data"
+      }
+      elem {
+        name: "radio-oper-data"
+      }
+    }
+    mode: SAMPLE
+    sample_interval: 100000000000
+  }
+  encoding: JSON_IETF
+}
+```
+
+gNMI Update:
+![](./imgs/gnmi_update.png)
+
+
+
+### Example: Subscribe to Interfaces
 
 The **sub_vlan1.txt** defines the parameters for the subscription for the openconfig-interfaces (oc-if) interfaces/interface Vlan1 data. Copy and paste the contents into the **~/gnmi_proto/sub_vlan1.txt** file:
 
@@ -212,7 +276,6 @@ The complete workflow for gnmi_cli with the subscription will look similar to th
 A complete payload example will look similar to the following:
 
 ```
-
 auto@automation:~/gnmi_ssl/certs$ gnmi_cli -address 10.1.1.5:9339 -server_name c9300 -with_user_pass -timeout 5s -ca_crt rootCA.pem -client_crt client.crt -client_key client.key -proto "$(cat ~/gnmi_proto/sub_vlan1.txt)" -dt p
 username: admin
 password: update: <
