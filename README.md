@@ -190,7 +190,7 @@ With wireless, receive telemetry data from Access Points (APs) using YANG Suite 
 In this example, we collect the radio-oper-data and the phy-ht-cfg:
 ![](./imgs/gnmi_yang_suite.png)
 
-1. Within YANG Suite, navigate to Protocols > gNMI.
+1. Within YANG Suite, navigate to "Protocols" > "gNMI".
 1. Select the YANG Set for the wireless device
 1. Select the "Cisco-IOS-XE-wireless-access-point-oper" Module
 1. Click the blue "Load Module(s)" button
@@ -200,7 +200,8 @@ In this example, we collect the radio-oper-data and the phy-ht-cfg:
 1. Select "STREAM"
 1. Select "SAMPLE"
 1. Choose a sample interval
-1. Select RFC 7951
+1. Select "RFC 7951" as the Origin
+1. Select the Encoding type "JSON_IETF"
 1. Once loaded, expand the tree to select the specific features to receive telemetry on the APs
 1. Click the blue "Build JSON" button
 1. Click the blue "Run PRC(s)" button
