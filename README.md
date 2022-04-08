@@ -543,7 +543,7 @@ time count
 
 The output above shows:
 
-- a **telegraf** dababase as defined in the Telegraf config file which holds that telemry data
+- a **telegraf** dababase as defined in the Telegraf config file which holds that telemetry data
 - one measurement defined as the YANG model used for the gRPC Dial-out subscription (Cisco-IOS-XE-process-cpu-oper:cpu-usage/cpu-utilization)
 - number of publications received so far (33251).
 
