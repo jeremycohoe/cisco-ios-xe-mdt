@@ -1,5 +1,6 @@
 ## [IOS XE Programmability Lab](https://github.com/jeremycohoe/cisco-ios-xe-programmability-lab)
 
+[Accessing the lab environment](https://github.com/sdeweese/CLUS22-LTROPS-1836-programmabilty-and-automation#accessing-the-lab-environment)
 
 # Module: Model Driven Telemetry
 
