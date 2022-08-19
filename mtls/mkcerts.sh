@@ -101,4 +101,6 @@ telemetry receiver protocol <receiver name>
  host name ${1} <collector port>
  protocol grpc-tls profile <profile name>
 EOF
-jcohoe@jcohoe-ubuntu18-lab:/etc/telegraf/mtls$
+
+
+
