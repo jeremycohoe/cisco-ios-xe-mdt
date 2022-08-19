@@ -1,0 +1,17 @@
+telemetry protocol grpc profile mtlsyangsuite
+ ca-trustpoint ys-ca-tp
+ id-trustpoint ys-id-tp
+
+telemetry receiver protocol mtlsyangsuite
+ host name yangsuite-telemetry.cisco.com 57502
+ protocol grpc-tls profile mtlsyangsuite
+
+telemetry ietf subscription 1
+ encoding encode-kvgpb
+ filter xpath /process-cpu-ios-xe-oper:cpu-usage/cpu-utilization/five-seconds
+ receiver-type protocol
+ source-address 10.85.134.83
+ stream yang-push
+ update-policy periodic 1000
+ receiver name mtlsyangsuite
+
