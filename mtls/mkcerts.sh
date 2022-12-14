@@ -1,4 +1,6 @@
 #!/bin/sh
+# USE OPENSSL VERSION 1.1.1
+# IT MIGHT NOT WORK WITH OPENSSL VERSION 3
 
 if [[ $# -ne 2 ]]; then
     echo "Usage: $0 <collector FQDN> <device FQDN>"
