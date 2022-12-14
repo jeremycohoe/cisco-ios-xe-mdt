@@ -55,7 +55,7 @@ EOF
 
 openssl genrsa -out ${1}.key > /dev/null 2>&1
 openssl req -new -key ${1}.key -out ${1}.csr -config ${1}.cnf
-openssl x509 -req -in ${1}.csr -CA ${1}-ca.crt -CAkey ${1}-ca.key -CAcreateserial -out ${1}.crt > /dev/null 2>&1
+openssl x509 -req -in ${1}.csr -CA ${1}-ca.crt -CAkey ${1}-ca.key -CAcreateserial -days 365 -out ${1}.crt > /dev/null 2>&1
 
 rm ${1}.cnf
 
@@ -77,8 +77,8 @@ EOF
 
 openssl genrsa -des3 -out ${2}.key -passout pass:admin > /dev/null 2>&1
 openssl req -new -key ${2}.key -out ${2}.csr -config ${2}.cnf -passin pass:admin
-openssl x509 -req -in ${2}.csr -CA ${1}-ca.crt -CAkey ${1}-ca.key -CAcreateserial -out ${2}-${1}-ca.crt > /dev/null 2>&1
-openssl x509 -req -in ${2}.csr -CA ${2}-ca.crt -CAkey ${2}-ca.key -CAcreateserial -out ${2}-${2}-ca.crt > /dev/null 2>&1
+openssl x509 -req -in ${2}.csr -CA ${1}-ca.crt -CAkey ${1}-ca.key -CAcreateserial -days 365 -out ${2}-${1}-ca.crt > /dev/null 2>&1
+openssl x509 -req -in ${2}.csr -CA ${2}-ca.crt -CAkey ${2}-ca.key -CAcreateserial -days 365 -out ${2}-${2}-ca.crt > /dev/null 2>&1
 
 rm ${2}.cnf
 
