@@ -1,0 +1,392 @@
+Sending:
+<nc:rpc xmlns:nc="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="urn:uuid:8a52509f-f647-4f79-b200-e46924455344">
+  <nc:get>
+    <nc:filter>
+      <mdt-capabilities-oper-data xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-mdt-capabilities-oper">
+        <mdt-system>
+          <sub-caps/>
+          <mdt-datastore>
+            <mdt-per-node/>
+            <mdt-transport/>
+          </mdt-datastore>
+        </mdt-system>
+      </mdt-capabilities-oper-data>
+    </nc:filter>
+  </nc:get>
+</nc:rpc>
+
+
+Received message from host
+<rpc-reply xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" xmlns:nc="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="urn:uuid:8a52509f-f647-4f79-b200-e46924455344">
+  <data>
+    <mdt-capabilities-oper-data xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-mdt-capabilities-oper">
+      <mdt-system>
+        <sub-caps>
+          <periodic-is-valid/>
+          <on-change-is-valid/>
+          <periodic-supported>mdt-cap-notif-config mdt-cap-notif-state</periodic-supported>
+          <on-change-supported/>
+        </sub-caps>
+        <mdt-datastore>
+          <mdt-per-node>
+            <index>3</index>
+            <sub-caps>
+              <on-change-is-valid/>
+              <on-change-supported>mdt-cap-notif-config mdt-cap-notif-state</on-change-supported>
+            </sub-caps>
+            <xpath>/xcvr-ios-xe-oper:transceiver-oper-data</xpath>
+          </mdt-per-node>
+          <mdt-per-node>
+            <index>71</index>
+            <sub-caps>
+              <on-change-is-valid/>
+              <on-change-supported>mdt-cap-notif-config mdt-cap-notif-state</on-change-supported>
+            </sub-caps>
+            <xpath>/vlan-ios-xe-oper:vlans</xpath>
+          </mdt-per-node>
+          <mdt-per-node>
+            <index>72</index>
+            <sub-caps>
+              <on-change-is-valid/>
+              <on-change-supported>mdt-cap-notif-config mdt-cap-notif-state</on-change-supported>
+            </sub-caps>
+            <xpath>/trustsec-ios-xe-oper:trustsec-state/cts-sxp-connections</xpath>
+          </mdt-per-node>
+          <mdt-per-node>
+            <index>73</index>
+            <sub-caps>
+              <on-change-is-valid/>
+              <on-change-supported>mdt-cap-notif-config mdt-cap-notif-state</on-change-supported>
+            </sub-caps>
+            <xpath>/trustsec-ios-xe-oper:trustsec-state/cts-rolebased-sgtmaps</xpath>
+          </mdt-per-node>
+          <mdt-per-node>
+            <index>74</index>
+            <sub-caps>
+              <on-change-is-valid/>
+              <on-change-supported>mdt-cap-notif-config mdt-cap-notif-state</on-change-supported>
+            </sub-caps>
+            <xpath>/tcam-ios-xe-oper:tcam-details</xpath>
+          </mdt-per-node>
+          <mdt-per-node>
+            <index>75</index>
+            <sub-caps>
+              <on-change-is-valid/>
+              <on-change-supported>mdt-cap-notif-config mdt-cap-notif-state</on-change-supported>
+            </sub-caps>
+            <xpath>/switch-ptp-ios-xe-oper:switch-ptp-oper-data</xpath>
+          </mdt-per-node>
+          <mdt-per-node>
+            <index>76</index>
+            <sub-caps>
+              <on-change-is-valid/>
+              <on-change-supported>mdt-cap-notif-config mdt-cap-notif-state</on-change-supported>
+            </sub-caps>
+            <xpath>/stacking-ios-xe-oper:stacking-oper-data</xpath>
+          </mdt-per-node>
+          <mdt-per-node>
+            <index>77</index>
+            <sub-caps>
+              <on-change-is-valid/>
+              <on-change-supported>mdt-cap-notif-config mdt-cap-notif-state</on-change-supported>
+            </sub-caps>
+            <xpath>/poe-ios-xe-oper:poe-oper-data</xpath>
+          </mdt-per-node>
+          <mdt-per-node>
+            <index>78</index>
+            <sub-caps>
+              <on-change-is-valid/>
+              <on-change-supported>mdt-cap-notif-config mdt-cap-notif-state</on-change-supported>
+            </sub-caps>
+            <xpath>/platform-ios-xe-oper:components</xpath>
+          </mdt-per-node>
+          <mdt-per-node>
+            <index>79</index>
+            <sub-caps>
+              <on-change-is-valid/>
+              <on-change-supported>mdt-cap-notif-config mdt-cap-notif-state</on-change-supported>
+            </sub-caps>
+            <xpath>/oc-platform:components/component/power-supply/state</xpath>
+          </mdt-per-node>
+          <mdt-per-node>
+            <index>80</index>
+            <sub-caps>
+              <on-change-is-valid/>
+              <on-change-supported>mdt-cap-notif-config mdt-cap-notif-state</on-change-supported>
+            </sub-caps>
+            <xpath>/oc-lacp:lacp/interfaces/interface/members/member/state</xpath>
+          </mdt-per-node>
+          <mdt-per-node>
+            <index>81</index>
+            <sub-caps>
+              <on-change-is-valid/>
+              <on-change-supported>mdt-cap-notif-config mdt-cap-notif-state</on-change-supported>
+            </sub-caps>
+            <xpath>/mdt-oper-v2:mdt-oper-v2-data</xpath>
+          </mdt-per-node>
+          <mdt-per-node>
+            <index>82</index>
+            <sub-caps>
+              <on-change-is-valid/>
+              <on-change-supported>mdt-cap-notif-config mdt-cap-notif-state</on-change-supported>
+            </sub-caps>
+            <xpath>/mdt-cfg:mdt-config-data</xpath>
+          </mdt-per-node>
+          <mdt-per-node>
+            <index>84</index>
+            <sub-caps>
+              <on-change-is-valid/>
+              <on-change-supported>mdt-cap-notif-config mdt-cap-notif-state</on-change-supported>
+            </sub-caps>
+            <xpath>/linecard-ios-xe-oper:linecard-oper-data</xpath>
+          </mdt-per-node>
+          <mdt-per-node>
+            <index>85</index>
+            <sub-caps>
+              <on-change-is-valid/>
+              <on-change-supported/>
+            </sub-caps>
+            <xpath>/interfaces-ios-xe-oper:interfaces/interface/lag-aggregate-state</xpath>
+          </mdt-per-node>
+          <mdt-per-node>
+            <index>86</index>
+            <sub-caps>
+              <on-change-is-valid/>
+              <on-change-supported/>
+            </sub-caps>
+            <xpath>/interfaces-ios-xe-oper:interfaces/interface/diffserv-info</xpath>
+          </mdt-per-node>
+          <mdt-per-node>
+            <index>87</index>
+            <sub-caps>
+              <on-change-is-valid/>
+              <on-change-supported>mdt-cap-notif-config mdt-cap-notif-state</on-change-supported>
+            </sub-caps>
+            <xpath>/interfaces-ios-xe-oper:interfaces/interface</xpath>
+          </mdt-per-node>
+          <mdt-per-node>
+            <index>88</index>
+            <sub-caps>
+              <on-change-is-valid/>
+              <on-change-supported>mdt-cap-notif-config mdt-cap-notif-state</on-change-supported>
+            </sub-caps>
+            <xpath>/ha-ios-xe-oper:ha-oper-data</xpath>
+          </mdt-per-node>
+          <mdt-per-node>
+            <index>92</index>
+            <sub-caps>
+              <on-change-is-valid/>
+              <on-change-supported>mdt-cap-notif-config mdt-cap-notif-state</on-change-supported>
+            </sub-caps>
+            <xpath>/cdp-ios-xe-oper:cdp-neighbor-details</xpath>
+          </mdt-per-node>
+          <mdt-per-node>
+            <index>93</index>
+            <sub-caps>
+              <on-change-is-valid/>
+              <on-change-supported>mdt-cap-notif-config mdt-cap-notif-state</on-change-supported>
+            </sub-caps>
+            <xpath>/boot-integrity-ios-xe-oper:boot-integrity-oper-data</xpath>
+          </mdt-per-node>
+          <mdt-per-node>
+            <index>94</index>
+            <sub-caps>
+              <on-change-is-valid/>
+              <on-change-supported>mdt-cap-notif-config mdt-cap-notif-state</on-change-supported>
+            </sub-caps>
+            <xpath>/bc-port-ios-xe-oper:breakout-port-oper-data</xpath>
+          </mdt-per-node>
+          <mdt-per-node>
+            <index>95</index>
+            <sub-caps>
+              <on-change-is-valid/>
+              <on-change-supported>mdt-cap-notif-config mdt-cap-notif-state</on-change-supported>
+            </sub-caps>
+            <xpath>/app-hosting-ios-xe-oper:app-hosting-oper-data</xpath>
+          </mdt-per-node>
+          <mdt-transport>
+            <transport>mdt-cap-transport-netconf</transport>
+            <mdt-transport-per-node>
+              <index>25</index>
+              <sub-caps>
+                <on-change-is-valid/>
+                <on-change-supported/>
+              </sub-caps>
+              <xpath>/oc-platform:components/component/power-supply/state</xpath>
+            </mdt-transport-per-node>
+            <mdt-transport-per-node>
+              <index>26</index>
+              <sub-caps>
+                <on-change-is-valid/>
+                <on-change-supported/>
+              </sub-caps>
+              <xpath>/oc-lacp:lacp/interfaces/interface/members/member/state</xpath>
+            </mdt-transport-per-node>
+          </mdt-transport>
+          <mdt-transport>
+            <transport>mdt-cap-transport-gnmi</transport>
+            <mdt-transport-per-node>
+              <index>3</index>
+              <sub-caps>
+                <on-change-is-valid/>
+                <on-change-supported/>
+              </sub-caps>
+              <xpath>/xcvr-ios-xe-oper:transceiver-oper-data</xpath>
+            </mdt-transport-per-node>
+            <mdt-transport-per-node>
+              <index>77</index>
+              <sub-caps>
+                <on-change-is-valid/>
+                <on-change-supported/>
+              </sub-caps>
+              <xpath>/vlan-ios-xe-oper:vlans</xpath>
+            </mdt-transport-per-node>
+            <mdt-transport-per-node>
+              <index>78</index>
+              <sub-caps>
+                <on-change-is-valid/>
+                <on-change-supported/>
+              </sub-caps>
+              <xpath>/trustsec-ios-xe-oper:trustsec-state/cts-sxp-connections</xpath>
+            </mdt-transport-per-node>
+            <mdt-transport-per-node>
+              <index>79</index>
+              <sub-caps>
+                <on-change-is-valid/>
+                <on-change-supported/>
+              </sub-caps>
+              <xpath>/trustsec-ios-xe-oper:trustsec-state/cts-rolebased-sgtmaps</xpath>
+            </mdt-transport-per-node>
+            <mdt-transport-per-node>
+              <index>80</index>
+              <sub-caps>
+                <on-change-is-valid/>
+                <on-change-supported/>
+              </sub-caps>
+              <xpath>/tcam-ios-xe-oper:tcam-details</xpath>
+            </mdt-transport-per-node>
+            <mdt-transport-per-node>
+              <index>81</index>
+              <sub-caps>
+                <on-change-is-valid/>
+                <on-change-supported/>
+              </sub-caps>
+              <xpath>/switch-ptp-ios-xe-oper:switch-ptp-oper-data</xpath>
+            </mdt-transport-per-node>
+            <mdt-transport-per-node>
+              <index>82</index>
+              <sub-caps>
+                <on-change-is-valid/>
+                <on-change-supported/>
+              </sub-caps>
+              <xpath>/stacking-ios-xe-oper:stacking-oper-data</xpath>
+            </mdt-transport-per-node>
+            <mdt-transport-per-node>
+              <index>83</index>
+              <sub-caps>
+                <on-change-is-valid/>
+                <on-change-supported/>
+              </sub-caps>
+              <xpath>/poe-ios-xe-oper:poe-oper-data</xpath>
+            </mdt-transport-per-node>
+            <mdt-transport-per-node>
+              <index>84</index>
+              <sub-caps>
+                <on-change-is-valid/>
+                <on-change-supported/>
+              </sub-caps>
+              <xpath>/platform-ios-xe-oper:components</xpath>
+            </mdt-transport-per-node>
+            <mdt-transport-per-node>
+              <index>85</index>
+              <sub-caps>
+                <on-change-is-valid/>
+                <on-change-supported/>
+              </sub-caps>
+              <xpath>/mdt-oper-v2:mdt-oper-v2-data</xpath>
+            </mdt-transport-per-node>
+            <mdt-transport-per-node>
+              <index>86</index>
+              <sub-caps>
+                <on-change-is-valid/>
+                <on-change-supported/>
+              </sub-caps>
+              <xpath>/mdt-cfg:mdt-config-data</xpath>
+            </mdt-transport-per-node>
+            <mdt-transport-per-node>
+              <index>88</index>
+              <sub-caps>
+                <on-change-is-valid/>
+                <on-change-supported/>
+              </sub-caps>
+              <xpath>/linecard-ios-xe-oper:linecard-oper-data</xpath>
+            </mdt-transport-per-node>
+            <mdt-transport-per-node>
+              <index>89</index>
+              <sub-caps>
+                <on-change-is-valid/>
+                <on-change-supported/>
+              </sub-caps>
+              <xpath>/interfaces-ios-xe-oper:interfaces</xpath>
+            </mdt-transport-per-node>
+            <mdt-transport-per-node>
+              <index>90</index>
+              <sub-caps>
+                <on-change-is-valid/>
+                <on-change-supported/>
+              </sub-caps>
+              <xpath>/ha-ios-xe-oper:ha-oper-data</xpath>
+            </mdt-transport-per-node>
+            <mdt-transport-per-node>
+              <index>94</index>
+              <sub-caps>
+                <on-change-is-valid/>
+                <on-change-supported/>
+              </sub-caps>
+              <xpath>/cdp-ios-xe-oper:cdp-neighbor-details</xpath>
+            </mdt-transport-per-node>
+            <mdt-transport-per-node>
+              <index>95</index>
+              <sub-caps>
+                <on-change-is-valid/>
+                <on-change-supported/>
+              </sub-caps>
+              <xpath>/boot-integrity-ios-xe-oper:boot-integrity-oper-data</xpath>
+            </mdt-transport-per-node>
+            <mdt-transport-per-node>
+              <index>96</index>
+              <sub-caps>
+                <on-change-is-valid/>
+                <on-change-supported/>
+              </sub-caps>
+              <xpath>/bc-port-ios-xe-oper:breakout-port-oper-data</xpath>
+            </mdt-transport-per-node>
+            <mdt-transport-per-node>
+              <index>97</index>
+              <sub-caps>
+                <on-change-is-valid/>
+                <on-change-supported/>
+              </sub-caps>
+              <xpath>/app-hosting-ios-xe-oper:app-hosting-oper-data</xpath>
+            </mdt-transport-per-node>
+          </mdt-transport>
+          <mdt-transport>
+            <transport>mdt-cap-transport-grpc</transport>
+          </mdt-transport>
+        </mdt-datastore>
+      </mdt-system>
+    </mdt-capabilities-oper-data>
+  </data>
+</rpc-reply>
+NETCONF get COMPLETE
+Requesting 'CloseSession'
+Sending:
+
+#184
+<nc:rpc xmlns:nc="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="urn:uuid:388f4928-4137-4c71-852b-3f9b139e3965">
+  <nc:close-session/>
+</nc:rpc>
+
+##
+Received message from host
+NETCONF DISCONNECT jcohoe-c9300-2.cisco.com:830
