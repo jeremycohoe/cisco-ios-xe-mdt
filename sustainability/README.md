@@ -15,7 +15,7 @@ On the machine with access to the Catalyst device, pull down the docker containe
 ```
 docker pull jeremycohoe/tig_mdt
 
-docker run -ti -p 3000:3000 -p 57500:57500 jeremycohoe/tig_mdt
+docker run -dti -p 3000:3000 -p 57500:57500 jeremycohoe/tig_mdt
 
 ```
 
