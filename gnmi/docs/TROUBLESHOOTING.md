@@ -27,14 +27,20 @@ dial tcp 10.85.134.65:9339: connect: connection refused
 **1. gNMI not enabled on device**
 ```cisco
 ! Check if gNMI is configured
-show running-config | include gnmi
+show running-config | include gnxi
 
 ! Enable gNMI if missing
 configure terminal
-  gnmi-yang
-  gnmi-yang server
-  gnmi-yang port 9339
+  gnxi
+  gnxi secure-allow-self-signed-trustpoint
+  gnxi secure-password-auth
+  gnxi secure-server
+  gnxi server
   exit
+
+! Optional for lab only (not production):
+! service internal
+! gnxi secure-init
 ```
 
 **2. Wrong IP address or port**
@@ -60,10 +66,10 @@ ip access-list extended GNMI-ACCESS
 **4. VRF routing issue**
 ```cisco
 ! Check if gNMI is in correct VRF
-show gnmi-yang state detail
+show gnxi state detail
 
-! Configure VRF if needed
-gnmi-yang server vrf Mgmt-vrf
+! Configure VRF if needed (IOS XE 17.3+)
+gnxi server vrf Mgmt-vrf
 ```
 
 ### Issue: Connection Timeout

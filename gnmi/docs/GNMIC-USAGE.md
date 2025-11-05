@@ -53,7 +53,7 @@ gnmic -a DEVICE_IP:PORT \
 ```bash
 gnmic -a 10.85.134.65:9339 \
   -u admin \
-  -p EN-TME-Cisco123 \
+  -p Cisco123 \
   --insecure \
   --encoding json_ietf \
   --timeout 30s \
@@ -79,7 +79,7 @@ gnmic -a 10.85.134.65:9339 \
 #!/bin/bash
 gnmic -a 10.85.134.65:9339 \
   -u admin \
-  -p EN-TME-Cisco123 \
+  -p Cisco123 \
   --insecure \
   subscribe \
   --path "openconfig:/components" \
@@ -125,7 +125,7 @@ gnmic -a 10.85.134.65:9339 \
 #!/bin/bash
 gnmic -a 10.85.134.65:9339 \
   -u admin \
-  -p EN-TME-Cisco123 \
+  -p Cisco123 \
   --insecure \
   subscribe \
   --path "openconfig:/system" \
@@ -147,19 +147,19 @@ gnmic -a 10.85.134.65:9339 \
 #!/bin/bash
 
 echo "=== Testing OpenConfig Interfaces ==="
-gnmic -a 10.85.134.65:9339 -u admin -p EN-TME-Cisco123 --insecure \
+gnmic -a 10.85.134.65:9339 -u admin -p Cisco123 --insecure \
   subscribe --path "openconfig:/interfaces/interface/state/counters" \
   --stream-mode sample --sample-interval 5s --count 2
 
 echo ""
 echo "=== Testing OpenConfig Platform ==="
-gnmic -a 10.85.134.65:9339 -u admin -p EN-TME-Cisco123 --insecure \
+gnmic -a 10.85.134.65:9339 -u admin -p Cisco123 --insecure \
   subscribe --path "openconfig:/components" \
   --stream-mode sample --sample-interval 5s --count 2
 
 echo ""
 echo "=== Testing OpenConfig System ==="
-gnmic -a 10.85.134.65:9339 -u admin -p EN-TME-Cisco123 --insecure \
+gnmic -a 10.85.134.65:9339 -u admin -p Cisco123 --insecure \
   subscribe --path "openconfig:/system" \
   --stream-mode sample --sample-interval 5s --count 2
 ```
@@ -172,7 +172,7 @@ gnmic -a 10.85.134.65:9339 -u admin -p EN-TME-Cisco123 --insecure \
 ```bash
 gnmic -a 10.85.134.65:9339 \
   -u admin \
-  -p EN-TME-Cisco123 \
+  -p Cisco123 \
   --insecure \
   capabilities
 ```
@@ -188,7 +188,7 @@ gnmic -a 10.85.134.65:9339 \
 ```bash
 gnmic -a 10.85.134.65:9339 \
   -u admin \
-  -p EN-TME-Cisco123 \
+  -p Cisco123 \
   --insecure \
   get \
   --path "openconfig:/interfaces/interface/state/counters" \
@@ -199,7 +199,7 @@ gnmic -a 10.85.134.65:9339 \
 ```bash
 gnmic -a 10.85.134.65:9339 \
   -u admin \
-  -p EN-TME-Cisco123 \
+  -p Cisco123 \
   --insecure \
   get \
   --path "/process-cpu-ios-xe-oper:cpu-usage/cpu-utilization" \
@@ -212,7 +212,7 @@ gnmic -a 10.85.134.65:9339 \
 ```bash
 gnmic -a 10.85.134.65:9339 \
   -u admin \
-  -p EN-TME-Cisco123 \
+  -p Cisco123 \
   --insecure \
   subscribe \
   --path "openconfig:/interfaces/interface/state/counters" \
@@ -224,7 +224,7 @@ gnmic -a 10.85.134.65:9339 \
 ```bash
 gnmic -a 10.85.134.65:9339 \
   -u admin \
-  -p EN-TME-Cisco123 \
+  -p Cisco123 \
   --insecure \
   subscribe \
   --path "openconfig:/components" \
@@ -237,7 +237,7 @@ gnmic -a 10.85.134.65:9339 \
 ```bash
 gnmic -a 10.85.134.65:9339 \
   -u admin \
-  -p EN-TME-Cisco123 \
+  -p Cisco123 \
   --insecure \
   subscribe \
   --path "openconfig:/interfaces/interface/state/counters" \
@@ -276,7 +276,7 @@ gnmic ... subscribe > output.json
 ```bash
 gnmic -a 10.85.134.65:9339 \
   -u admin \
-  -p EN-TME-Cisco123 \
+  -p Cisco123 \
   --insecure \
   capabilities | grep -i "name:"
 ```

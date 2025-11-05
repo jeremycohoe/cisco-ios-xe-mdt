@@ -32,13 +32,22 @@ gnmi/
 
 ### Device Configuration
 
-Ensure your Cisco device has gNMI enabled:
+Configure gNMI on your Cisco IOS XE device:
 
 ```cisco
-gnmi-yang
-gnmi-yang server
-gnmi-yang port 9339
+! Enable gNMI server
+gnxi
+gnxi secure-allow-self-signed-trustpoint
+gnxi secure-password-auth
+gnxi secure-server
+gnxi server
+
+! Optional for lab environments (not for production):
+! service internal
+! gnxi secure-init
 ```
+
+**Note**: The `service internal` and `gnxi secure-init` commands are optional and should only be used in lab environments, not in production.
 
 ## 📋 What's Included
 
@@ -139,7 +148,7 @@ Both Telegraf configs use these default settings:
 ```toml
 addresses = ["10.85.134.65:9339"]
 username = "admin"
-password = "EN-TME-Cisco123"
+password = "Cisco123"
 ```
 
 **Update these values** to match your device's:

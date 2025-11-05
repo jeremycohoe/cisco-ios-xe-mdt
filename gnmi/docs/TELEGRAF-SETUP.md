@@ -46,6 +46,35 @@ telegraf --version
 # Expected: Telegraf 1.30+ (tested with 1.36.3)
 ```
 
+## IOS XE Device Configuration
+
+Before configuring Telegraf, ensure gNMI is enabled on your Cisco IOS XE device:
+
+```cisco
+! Enable gNMI server with secure authentication
+gnxi
+gnxi secure-allow-self-signed-trustpoint
+gnxi secure-password-auth
+gnxi secure-server
+gnxi server
+```
+
+**Optional for Lab Environments Only** (not for production):
+```cisco
+service internal
+gnxi secure-init
+```
+
+**Verification**:
+```cisco
+show gnxi state detail
+```
+
+Expected output should show:
+- **State**: Enabled
+- **Server**: Running
+- **Port**: 9339 (default)
+
 ## Basic Configuration
 
 ### Minimum Required Settings
@@ -75,7 +104,7 @@ telegraf --version
 [[inputs.gnmi]]
   addresses = ["10.85.134.65:9339"]
   username = "admin"
-  password = "EN-TME-Cisco123"
+  password = "Cisco123"
 
   encoding = "json_ietf"
   redial = "20s"
